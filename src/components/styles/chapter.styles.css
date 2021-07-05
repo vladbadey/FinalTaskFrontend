@@ -1,0 +1,9 @@
+ul li{
+    font-size:14px;
+    display:inline-block;
+    width:20px;
+    float: left;
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+}

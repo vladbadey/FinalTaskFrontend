@@ -1,0 +1,40 @@
+import React, {Component} from "react";
+import OnboardingService from "../services/onboarding.service";
+import AuthService from "../services/auth.service";
+import './styles/profile.styles.css'
+import {Button} from "react-bootstrap";
+
+export default class UserFandoms extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            userFandoms: []
+        };
+    }
+
+    componentDidMount() {
+        const userFandoms = OnboardingService.getAllUserFandoms(AuthService.getCurrentUsername()).then(res => {
+            this.setState({userFandoms: res.data})
+        })
+    }
+
+    render() {
+        return (
+            <div className="container">
+                {this.state.userFandoms.map(fandom => (
+                    <div className="container">
+                    <img width="450px" height="200px" src={fandom.image}/>
+                    <h4>{fandom.name}</h4>
+                    </div>
+                    ))}
+                <br/>
+                <br/>
+                <Button onClick={() => {
+                    window.location.assign('http://localhost:8081/onboarding')
+                }
+                }>Поменять предпочтения</Button>
+            </div>
+        );
+    }
+}
