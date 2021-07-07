@@ -15,8 +15,10 @@ import BoardAdmin from "./components/board-admin.component";
 import Onboarding from "./components/onboarding.component";
 import CardDetails from "./components/card-details.component"
 import Chapter from "./components/chapter.component";
+import AddChapter from "./components/add-chapter.component";
 import UserFandoms from "./components/user-fandoms.component";
 import UserFavorites from "./components/user-favorites.component";
+import NewCard from "./components/new-card.component";
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ class App extends Component {
       this.setState({
         currentUser: user,
         showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
-        showAdminBoard: user.roles.includes("ROLE_ADMIN"),
+        showAdminBoard: user.roles.includes("ROLE_ADMIN")
       });
     }
   }
@@ -126,6 +128,8 @@ class App extends Component {
               <Route path="/chapter" component={Chapter}/>
               <Route path="/userFandoms" component={UserFandoms} />
               <Route path="/userFavorites" component={UserFavorites} />
+              <Route path="/newCard" component={NewCard} />
+              <Route path="/createChapter" component={AddChapter} />
             </Switch>
           </div>
         </div>

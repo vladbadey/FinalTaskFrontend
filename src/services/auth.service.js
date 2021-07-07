@@ -1,5 +1,4 @@
 import axios from "axios";
-import {Redirect} from "react-router-dom";
 
 const API_URL = "http://localhost:8080/api/auth/";
 
@@ -13,8 +12,8 @@ class AuthService {
             .then(response => {
                 if (response.data.accessToken) {
                     localStorage.setItem('user', JSON.stringify(response.data));
-                    localStorage.setItem('userEmail', JSON.stringify(response.data.email))
-                    localStorage.setItem('username', JSON.stringify(response.data.username))
+                    localStorage.setItem('userEmail', JSON.parse(JSON.stringify(response.data.email)))
+                    localStorage.setItem('username', JSON.parse(JSON.stringify(response.data.username)))
                 }
                 return response.data;
             });
@@ -35,8 +34,9 @@ class AuthService {
                 password
             })
             .then(response => {
-                    localStorage.setItem('usernameSign', username)
-                    localStorage.setItem('passwordSign', password)
+                localStorage.setItem('userEmail', email)
+                localStorage.setItem('username', username)
+                localStorage.setItem('passwordSign', password)
             });
     }
 
@@ -45,7 +45,11 @@ class AuthService {
     }
 
     getCurrentUserEmail() {
-        return JSON.parse(localStorage.getItem('userEmail'));
+        return localStorage.getItem('userEmail');
+    }
+
+    getCurrentEmailSignup() {
+        return localStorage.getItem('emailSign')
     }
 
     getCurrentUsernameSignup() {
@@ -57,11 +61,11 @@ class AuthService {
     }
 
     getCurrentUsername() {
-        return JSON.parse(localStorage.getItem('username'))
+        return localStorage.getItem('username')
     }
 
     getCurrentUserPassword() {
-        return JSON.parse(localStorage.getItem('password'))
+        return localStorage.getItem('password')
     }
 }
 

@@ -22,6 +22,7 @@ export default class UserFavorites extends Component {
     render() {
         return (
             <div className="container">
+                <h2>Мои избранные</h2>
                 <CardList content={this.state.userFavorites} />
             </div>
         );

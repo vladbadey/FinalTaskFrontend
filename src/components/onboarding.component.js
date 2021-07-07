@@ -62,11 +62,11 @@ export default class Onboarding extends Component {
                     }
 
                     console.log(list)
-                    OnboardingService.fillUserFandomsByEmail(AuthService.getCurrentUserEmail(), list).then(
-                        console.log(AuthService.getCurrentUsernameSignup()),
-                        console.log(AuthService.getCurrentPasswordSignup())
+                    OnboardingService.fillUserFandomsByEmail(AuthService.getCurrentUserEmail(), list).then(res => {
+                            console.log("Filled fandoms")
+                        }
                     )
-                    AuthService.login(AuthService.getCurrentUsernameSignup(), AuthService.getCurrentPasswordSignup()).then(() => {
+                    AuthService.login(AuthService.getCurrentUsername(), AuthService.getCurrentPasswordSignup()).then(() => {
                         window.location.assign('http://localhost:8081/home')
                     })
                 }

@@ -8,6 +8,12 @@ class ChapterService {
             params: {name: name}
         });
     }
+
+    createChapterByName(name, data) {
+        return axios.post(API_URL + '/create', data, {
+            params: {name: name}
+        })
+    }
 }
 
 export default new ChapterService();
