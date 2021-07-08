@@ -67,7 +67,7 @@ export default class Onboarding extends Component {
                         }
                     )
                     AuthService.login(AuthService.getCurrentUsername(), AuthService.getCurrentPasswordSignup()).then(() => {
-                        window.location.assign('https://fanficsappreact.herokuapp.com//home')
+                        window.location.assign('https://fanficsappreact.herokuapp.com/home')
                     })
                 }
                 }>Submit</Button>
