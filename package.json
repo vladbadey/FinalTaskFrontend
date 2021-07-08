@@ -10,6 +10,7 @@
     "bootstrap": "^4.6.0",
     "cloudinary-core": "^2.11.4",
     "cloudinary-react": "^1.7.0",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-bootstrap": "^1.6.1",
@@ -22,7 +23,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
