@@ -83,6 +83,10 @@ export default class Register extends Component {
   }
 
   handleRegister(e) {
+    console.log(this.state.username)
+    console.log(this.state.password)
+    console.log(this.state.email)
+
     e.preventDefault();
 
     this.setState({
@@ -106,7 +110,7 @@ export default class Register extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='/onboarding'/>;
+      return <Redirect to='https://fanficsappreact.herokuapp.com/onboarding'/>;
     }
     return (
       <div className="col-md-12">
