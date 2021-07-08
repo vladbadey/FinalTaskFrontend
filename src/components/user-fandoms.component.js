@@ -32,7 +32,7 @@ export default class UserFandoms extends Component {
                 <br/>
                 <br/>
                 <Button onClick={() => {
-                    window.location.assign('http://localhost:8081/onboarding')
+                    window.location.assign('https://fanficsappreact.herokuapp.com//onboarding')
                 }
                 }>Поменять предпочтения</Button>
             </div>

@@ -4,7 +4,7 @@ import './styles/card.styles.css'
 export const Card = (props) => (
     <div className='card-container' onClick={() => {
         localStorage.setItem('composition', props.composition.name)
-        window.location.assign('http://localhost:8081/cardDetails')
+        window.location.assign('https://fanficsappreact.herokuapp.com//cardDetails')
     }}>
 
         <img className='card-img' height={220} width={150} alt="image" src={props.composition.image}/>
