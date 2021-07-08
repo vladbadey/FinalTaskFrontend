@@ -2,9 +2,6 @@
   "name": "react-jwt-auth",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "12.x"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -48,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://localhost:8080"
+  "proxy": "https://fanficsappitr.herokuapp.com"
 }
