@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/fandoms/';
+const API_URL = 'https://fanficsappitr.herokuapp.com/api/fandoms/';
 
 class OnboardingService {
     getAllFandoms() {

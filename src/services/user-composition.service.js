@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/user/compositions/';
+const API_URL = 'https://fanficsappitr.herokuapp.com/api/user/compositions/';
 
 class UserCompositionService {
     getUserCompositions(name) {
