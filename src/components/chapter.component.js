@@ -14,14 +14,12 @@ export default class Chapter extends Component {
     }
 
     componentDidMount() {
-
-        ChapterService.getAllChaptersByCompositionName(localStorage.getItem("composition")).then(res => {
+        const getChapters = ChapterService.getAllChaptersByCompositionName(localStorage.getItem("composition")).then(res => {
             this.setState({content: res.data})
             this.setState({chapterName: res.data[0].name})
             this.setState({chapterContent: res.data[0].content})
             console.log(res.data)
         })
-
     }
 
 

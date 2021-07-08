@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/compositions/';
+const API_URL = '/api/compositions/';
 
 class CompositionService {
     getAllCompositions() {

@@ -1,10 +1,6 @@
 import React from "react";
 import './styles/card.styles.css'
-import ChapterService from "../services/chapter.service";
 
-let content = ChapterService.getAllChaptersByCompositionName(localStorage.getItem("composition")).then(res => {
-    content = res.data;
-})
 export const Card = (props) => (
     <div className='card-container' onClick={() => {
         localStorage.setItem('composition', props.composition.name)

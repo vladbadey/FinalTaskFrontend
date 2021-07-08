@@ -57,20 +57,6 @@ export class NewCard extends Component {
         };
     }
 
-    processFile(e) {
-        const formdata = new FormData();
-
-        formdata.append("file", this.state.image);
-        formdata.append("cloud_name", "dnwbktk0z");
-        formdata.append("upload_preset", "fp9a0chb");
-
-        axios.post("https://api.cloudinary.com/v1_1/dnwbktk0z/upload", formdata).then(r => {
-            console.log(r.data)
-            localStorage.setItem('imageURL', r.data.url)
-            console.log(r.data.url)
-        });
-
-    };
 
     handlePic = (e) => {
         const pic = e.target.files[0];
@@ -110,13 +96,22 @@ export class NewCard extends Component {
                  <br/>
                 <br/>
                 <Button onClick={() => {
-                    this.processFile()
+                    const formdata = new FormData();
 
+                    formdata.append("file", this.state.image);
+                    formdata.append("cloud_name", "dnwbktk0z");
+                    formdata.append("upload_preset", "fp9a0chb");
+
+                    axios.post("https://api.cloudinary.com/v1_1/dnwbktk0z/upload", formdata).then(r => {
+                        localStorage.setItem('image', r.data.url)
+                    });
+
+                    console.log(localStorage.getItem('image'))
 
                     let res = {
                         name: document.getElementById("composition_name").value,
                         description: document.getElementById("composition_description").value,
-                        image: localStorage.getItem('imageURL'),
+                        image: localStorage.getItem('image'),
                         fandom: document.getElementById("select").value
                     }
 

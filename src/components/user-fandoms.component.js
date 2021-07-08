@@ -22,7 +22,7 @@ export default class UserFandoms extends Component {
     render() {
         return (
             <div className="container">
-                <h2>Мои предпочтенияы</h2>
+                <h2>Мои предпочтения</h2>
                 {this.state.userFandoms.map(fandom => (
                     <div className="container">
                     <img width="450px" height="200px" src={fandom.image}/>

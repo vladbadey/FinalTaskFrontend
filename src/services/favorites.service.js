@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/favorites/';
+const API_URL = '/api/favorites/';
 
 class FavoritesService {
     addNewFavoriteByName(username, compositionName) {
