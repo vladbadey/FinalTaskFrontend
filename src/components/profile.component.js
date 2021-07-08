@@ -45,10 +45,10 @@ export default class Profile extends Component {
           <br/>
           <div className="container">
           <Button type="submit" onClick={() => {
-            window.location.assign('http://localhost:8081/userFandoms')
+            window.location.assign('https://fanficsappreact.herokuapp.com//userFandoms')
           }}>Мои предпочтения</Button>
           <Button onClick={() => {
-            window.location.assign('http://localhost:8081/userFavorites')
+            window.location.assign('https://fanficsappreact.herokuapp.com//userFavorites')
           }}>Мои избранные</Button>
           </div>
         </header>
@@ -56,7 +56,7 @@ export default class Profile extends Component {
           <div className="my_compositions_header">
             <h4><strong>Мои произведения</strong></h4>
             <Button onClick={() => {
-              window.location.assign('http://localhost:8081/newCard')
+              window.location.assign('https://fanficsappreact.herokuapp.com//newCard')
             }}>+</Button>
           </div>
           <CardList content={this.state.userCompositions} />

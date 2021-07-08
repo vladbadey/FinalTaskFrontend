@@ -41,13 +41,13 @@ export default class CardDetails extends Component {
                 <br/>
                 <div className="list-inline">
                     <Button type="submit" onClick={() => {
-                        window.location.assign('http://localhost:8081/chapter')
+                        window.location.assign('https://fanficsappreact.herokuapp.com//chapter')
                     }}>Читать</Button>
 
                     {user ? (
                         <Button onClick={() => {
                             FandomService.addNewFavoriteByName(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
-                                window.location.assign('http://localhost:8081/home')
+                                window.location.assign('https://fanficsappreact.herokuapp.com//home')
                             })
                         }}>Добавить в избранное</Button>
                     ) : (
@@ -58,7 +58,7 @@ export default class CardDetails extends Component {
                         <Button onClick={() => {
                             UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
 
-                                window.location.assign('http://localhost:8081/home')
+                                window.location.assign('https://fanficsappreact.herokuapp.com//home')
                             })
                         }}>Удалить произведение</Button>
                     ) : (
