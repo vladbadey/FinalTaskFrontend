@@ -38,7 +38,7 @@ export class AddChapter extends Component {
                         content: document.getElementById("chapter_content").value
                     }
                     ChapterService.createChapterByName(localStorage.getItem('composition'), JSON.parse(JSON.stringify(res))).then(res => {
-                        window.location.assign('https://fanficsappreact.herokuapp.com//chapter')
+                        window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
                     })
                 }
                 }>Добавить главу</Button>

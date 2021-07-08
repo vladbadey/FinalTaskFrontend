@@ -117,7 +117,7 @@ export class NewCard extends Component {
 
                     UserCompositionService.createComposition(AuthService.getCurrentUsername(), JSON.parse(JSON.stringify(res))).then(r => {
                         localStorage.setItem('composition', document.getElementById("composition_name").value)
-                        window.location.assign('https://fanficsappreact.herokuapp.com//createChapter')
+                        window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
 
                     })
                 }
