@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/favorites/';
+const API_URL = 'https://fanficsappitr.herokuapp.com/api/favorites/';
 
 class FavoritesService {
     addNewFavoriteByName(username, compositionName) {

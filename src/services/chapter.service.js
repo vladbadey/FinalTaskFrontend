@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/compositions/chapters';
+const API_URL = 'https://fanficsappitr.herokuapp.com/api/compositions/chapters';
 
 class ChapterService {
     getAllChaptersByCompositionName(name) {
