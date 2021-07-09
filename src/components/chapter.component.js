@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ChapterService from "../services/chapter.service";
 import './styles/chapter.styles.css'
+import {Button} from "react-bootstrap";
 
 export default class Chapter extends Component {
     constructor(props) {
@@ -26,6 +27,16 @@ export default class Chapter extends Component {
     render() {
         return (
             <div className="container jumbotron">
+                <div className="list-inline">
+                    <Button onClick={() => {
+                        window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
+                    }}>Добавить главу</Button>
+                    <Button onClick={() => {
+                        ChapterService.deleteChapter(this.state.chapterName).then(res => {
+                            console.log("Deleted chapter")
+                        })
+                    }}>Удалить главу</Button>
+                </div>
                 <div>
                     {this.state.content.map((chapter, index) => (
                         <div className="inline-list">
