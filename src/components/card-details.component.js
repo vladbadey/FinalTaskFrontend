@@ -12,7 +12,8 @@ export default class CardDetails extends Component {
         this.state = {
             content: [],
             currentUser: undefined,
-            compositionUser: undefined
+            compositionUser: undefined,
+            username: undefined
         };
     }
 
@@ -23,6 +24,11 @@ export default class CardDetails extends Component {
                 currentUser: user
             });
         }
+        const username = AuthService.getCurrentUsername();
+        if (username) {
+            this.setState({username: username})
+        }
+
         CompositionService.getCompositionByUsername(localStorage.getItem('composition')).then(res => {
             this.setState({content: res.data})
         })
@@ -34,6 +40,7 @@ export default class CardDetails extends Component {
     render() {
         const user = this.state.currentUser;
         const compUser = this.state.compositionUser;
+        const username = this.state.username;
 
         return (
             <div className="container jumbotron">
@@ -47,7 +54,7 @@ export default class CardDetails extends Component {
                 <div className="list-inline">
                     <Button type="submit" onClick={() => {
                         // window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
-                        console.log(user.name)
+                        console.log(username)
                         console.log(compUser)
                     }}>Читать</Button>
 
