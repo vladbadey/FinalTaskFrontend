@@ -53,9 +53,7 @@ export default class CardDetails extends Component {
                 <br/>
                 <div className="list-inline">
                     <Button type="submit" onClick={() => {
-                        // window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
-                        console.log(username)
-                        console.log(compUser)
+                        window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
                     }}>Читать</Button>
 
                     {user ? (
@@ -66,7 +64,7 @@ export default class CardDetails extends Component {
                                 })
                             }}>Добавить в избранное</Button>
 
-                            {user.name === compUser ? (
+                            {username === compUser ? (
                                 <Button onClick={() => {
                                     UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
                                         window.location.assign('https://fanficsappreact.herokuapp.com/home')
