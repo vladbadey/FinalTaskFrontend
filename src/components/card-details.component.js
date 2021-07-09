@@ -57,19 +57,19 @@ export default class CardDetails extends Component {
                                 })
                             }}>Добавить в избранное</Button>
 
-                            {user.name===compUser ? (
+                            {user.name === compUser ? (
                                 <Button onClick={() => {
                                     UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
                                         window.location.assign('https://fanficsappreact.herokuapp.com/home')
                                     })
                                 }}>Удалить произведение</Button>
                             ) : (
-                                {}
+                                <b/>
                             )
                             }
                         </div>
                     ) : (
-                        {}
+                        <b/>
                     )}
                 </div>
             </div>
