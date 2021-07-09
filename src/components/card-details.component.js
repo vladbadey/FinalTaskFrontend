@@ -11,7 +11,8 @@ export default class CardDetails extends Component {
 
         this.state = {
             content: [],
-            currentUser: undefined
+            currentUser: undefined,
+            compositionUser: undefined
         };
     }
 
@@ -25,10 +26,14 @@ export default class CardDetails extends Component {
         CompositionService.getCompositionByUsername(localStorage.getItem('composition')).then(res => {
             this.setState({content: res.data})
         })
+        CompositionService.getCompositionUser(localStorage.getItem('composition')).then(res => {
+            this.setState({compositionUser: res.data})
+        })
     }
 
     render() {
         const user = this.state.currentUser;
+        const compUser = this.state.compositionUser;
 
         return (
             <div className="container jumbotron">
@@ -45,21 +50,24 @@ export default class CardDetails extends Component {
                     }}>Читать</Button>
 
                     {user ? (
-                        <Button onClick={() => {
-                            FandomService.addNewFavoriteByName(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
-                                window.location.assign('https://fanficsappreact.herokuapp.com/home')
-                            })
-                        }}>Добавить в избранное</Button>
-                    ) : (
-                        <div></div>
-                    )}
-                    {user ? (
+                        <div>
+                            <Button onClick={() => {
+                                FandomService.addNewFavoriteByName(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
+                                    window.location.assign('https://fanficsappreact.herokuapp.com/home')
+                                })
+                            }}>Добавить в избранное</Button>
 
-                        <Button onClick={() => {
-                            UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
-                                window.location.assign('https://fanficsappreact.herokuapp.com/home')
-                            })
-                        }}>Удалить произведение</Button>
+                            {compUser ? (
+                                <Button onClick={() => {
+                                    UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
+                                        window.location.assign('https://fanficsappreact.herokuapp.com/home')
+                                    })
+                                }}>Удалить произведение</Button>
+                            ) : (
+                                <div></div>
+                            )
+                            }
+                        </div>
                     ) : (
                         <div></div>
                     )}
