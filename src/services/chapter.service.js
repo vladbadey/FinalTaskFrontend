@@ -14,6 +14,12 @@ class ChapterService {
             params: {name: name}
         })
     }
+
+    deleteChapter(chapter_name) {
+        return axios.delete(API_URL + "/delete", {
+            params: {chapter_name: chapter_name}
+        });
+    }
 }
 
 export default new ChapterService();
