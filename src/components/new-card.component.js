@@ -64,7 +64,7 @@ export class NewCard extends Component {
         this.setState({image: pic})
         const formdata = new FormData();
 
-        formdata.append("file", this.state.image);
+        formdata.append("file", pic);
         formdata.append("cloud_name", "dnwbktk0z");
         formdata.append("upload_preset", "fp9a0chb");
 
