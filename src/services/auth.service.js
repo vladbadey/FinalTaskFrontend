@@ -14,7 +14,6 @@ class AuthService {
                     localStorage.setItem('user', JSON.stringify(response.data));
                     localStorage.setItem('userEmail', JSON.parse(JSON.stringify(response.data.email)))
                     localStorage.setItem('username', JSON.parse(JSON.stringify(response.data.username)))
-                    localStorage.setItem('passwordSign', JSON.parse(JSON.stringify(response.data.password)))
                 }
                 return response.data;
             });
