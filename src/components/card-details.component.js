@@ -57,7 +57,6 @@ export default class CardDetails extends Component {
 
                         <Button onClick={() => {
                             UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
-
                                 window.location.assign('https://fanficsappreact.herokuapp.com/home')
                             })
                         }}>Удалить произведение</Button>

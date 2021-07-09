@@ -15,9 +15,9 @@ class ChapterService {
         })
     }
 
-    deleteChapter(chapter_name) {
+    deleteChapter(name) {
         return axios.delete(API_URL + "/delete", {
-            params: {chapter_name: chapter_name}
+            params: {name: name}
         });
     }
 }
