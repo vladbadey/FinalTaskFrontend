@@ -104,6 +104,7 @@ export class NewCard extends Component {
 
                     axios.post("https://api.cloudinary.com/v1_1/dnwbktk0z/upload", formdata).then(r => {
                         localStorage.setItem('image', r.data.url)
+                        console.log(r.data.url)
                     });
 
                     console.log(localStorage.getItem('image'))
@@ -117,7 +118,7 @@ export class NewCard extends Component {
 
                     UserCompositionService.createComposition(AuthService.getCurrentUsername(), JSON.parse(JSON.stringify(res))).then(r => {
                         localStorage.setItem('composition', document.getElementById("composition_name").value)
-                        window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
+                        // window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
 
                     })
                 }
