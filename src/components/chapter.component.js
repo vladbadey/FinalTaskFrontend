@@ -29,7 +29,8 @@ export default class Chapter extends Component {
             <div className="container jumbotron">
                 <div className="list-inline">
                     <Button onClick={() => {
-                        window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
+                        console.log(this.state.chapterName)
+                        // window.location.assign('https://fanficsappreact.herokuapp.com/createChapter')
                     }}>Добавить главу</Button>
                     <Button onClick={() => {
                         ChapterService.deleteChapter(this.state.chapterName).then(res => {
