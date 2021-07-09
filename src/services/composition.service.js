@@ -16,6 +16,12 @@ class CompositionService {
             params: {name: name}
         })
     }
+
+    getCompositionUser(name) {
+        return axios.get(API_URL + 'getUser',{
+            params: {name: name}
+        })
+    }
 }
 
 export default new CompositionService();
