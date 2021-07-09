@@ -26,7 +26,7 @@ export default class CardDetails extends Component {
         CompositionService.getCompositionByUsername(localStorage.getItem('composition')).then(res => {
             this.setState({content: res.data})
         })
-        CompositionService.getCompositionUser(localStorage.getItem('composition')).then(res => {
+        UserCompositionService.getCompositionUser(localStorage.getItem('composition')).then(res => {
             this.setState({compositionUser: res.data})
         })
     }

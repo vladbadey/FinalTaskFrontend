@@ -9,6 +9,12 @@ class UserCompositionService {
         });
     }
 
+    getCompositionUser(name) {
+        return axios.get(API_URL + 'getUser',{
+            params: {name: name}
+        })
+    }
+
     createComposition(name, data) {
         return axios.post(API_URL + 'create', data, {
             params: {name: name}
