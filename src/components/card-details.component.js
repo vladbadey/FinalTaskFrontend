@@ -46,7 +46,9 @@ export default class CardDetails extends Component {
                 <br/>
                 <div className="list-inline">
                     <Button type="submit" onClick={() => {
-                        window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
+                        // window.location.assign('https://fanficsappreact.herokuapp.com/chapter')
+                        console.log(user.name)
+                        console.log(compUser)
                     }}>Читать</Button>
 
                     {user ? (
