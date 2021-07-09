@@ -110,7 +110,7 @@ export default class Register extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='https://fanficsappreact.herokuapp.com/onboarding'/>;
+      return <Redirect to='onboarding'/>;
     }
     return (
       <div className="col-md-12">
