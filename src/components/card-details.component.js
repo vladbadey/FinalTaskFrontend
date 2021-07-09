@@ -50,26 +50,26 @@ export default class CardDetails extends Component {
                     }}>Читать</Button>
 
                     {user ? (
-                        <div>
+                        <div className="list-inline">
                             <Button onClick={() => {
                                 FandomService.addNewFavoriteByName(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
                                     window.location.assign('https://fanficsappreact.herokuapp.com/home')
                                 })
                             }}>Добавить в избранное</Button>
 
-                            {compUser ? (
+                            {user.name===compUser ? (
                                 <Button onClick={() => {
                                     UserCompositionService.deleteComposition(AuthService.getCurrentUsername(), localStorage.getItem('composition')).then(res => {
                                         window.location.assign('https://fanficsappreact.herokuapp.com/home')
                                     })
                                 }}>Удалить произведение</Button>
                             ) : (
-                                <div></div>
+                                {}
                             )
                             }
                         </div>
                     ) : (
-                        <div></div>
+                        {}
                     )}
                 </div>
             </div>
