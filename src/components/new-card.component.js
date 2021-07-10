@@ -42,7 +42,7 @@ function ImageDrop() {
     )
 }
 
-
+const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
 
 export class NewCard extends Component {
 
@@ -83,12 +83,14 @@ export class NewCard extends Component {
 
 
 
-
     render() {
         return (
             <div className="input">
                 <h4>Картинка</h4>
-                <input type="file" onChange={this.handlePic}/>
+                <div {...getRootProps({className: "dropzone"})}>
+                    <input type="file" onChange={this.handlePic}/>
+                    <p>Drag and drop some files here</p>
+                </div>
                 <br/>
                 <br/>
                 <h4>Введите название произведения</h4>
