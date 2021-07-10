@@ -11,7 +11,7 @@ export default class Home extends Component {
         this.state = {
             content: [],
             fandoms: [],
-            compositions: []
+            compositions: undefined
         };
     }
 
@@ -50,23 +50,26 @@ export default class Home extends Component {
                 <div className="list-inline">
                     <Button onClick={() => {
                         this.getSortedCompositions()
+                        console.log(this.state.compositions)
                     }}>Сортировать по дате</Button>
                     <select size="1" id="select">
                         <option onChange={() => {
                             this.getAllCompositions()
+                            console.log(this.state.content)
                         }}>Все</option>
                         {this.state.fandoms.map((fandom, index) => (
                             <option key={index} value={fandom.name} onChange={() => {
                                 this.updateCompositionsByFandom(fandom.name)
+                                console.log(this.state.compositions)
                             }}>{fandom.name}</option>
                         ))}
                     </select>
                 </div>
-                {compositions ? (
-                    <CardList content={this.state.compositions}/>
-                ) : (
-                    <CardList content={this.state.content}/>
-                )}
+                {/*{compositions ? (*/}
+                {/*    <CardList content={compositions}/>*/}
+                {/*) : (*/}
+                {/*    <CardList content={this.state.content}/>*/}
+                {/*)}*/}
 
             </div>
         );
