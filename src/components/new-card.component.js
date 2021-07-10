@@ -98,7 +98,7 @@ export class NewCard extends Component {
                 <br/>
                 <br/>
                 <h4>Введите описание произведения</h4>
-                <Textarea id="composition_description" type="text" style={{padding: 30}} size="70"/>
+                <input id="composition_description" type="text" style={{padding: 30}} size="70"/>
                 <br/>
                 <br/>
                 <select size="1" id="select">
