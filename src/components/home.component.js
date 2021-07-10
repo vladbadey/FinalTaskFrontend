@@ -20,7 +20,7 @@ export default class Home extends Component {
             this.setState({content: res.data})
         })
         console.log(content)
-        const fandoms = OnboardingService.getAllFandoms().then(res => {
+        OnboardingService.getAllFandoms().then(res => {
             this.setState({fandoms: res.data})
         })
     }
@@ -32,6 +32,7 @@ export default class Home extends Component {
                 <div className="list-inline">
                     <Button onClick={() => {
                         CompositionService.getSortedCompositions().then(r => {
+                            this.setState({compositions: []})
                             this.setState({compositions: r.data})
                         });
                     }}>Сортировать по дате</Button>
@@ -39,6 +40,7 @@ export default class Home extends Component {
                         {this.state.fandoms.map((fandom, index) => (
                             <option key={index} value={fandom.name} onClick={() => {
                                 CompositionService.getCompositionsByFandom(fandom.name).then(r => {
+                                    this.setState({compositions: []})
                                     this.setState({compositions: r.data})
                                 })
                             }}>{fandom.name}</option>
