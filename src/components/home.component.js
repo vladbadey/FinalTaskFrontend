@@ -53,6 +53,9 @@ export default class Home extends Component {
                         console.log(this.state.compositions)
                     }}>Сортировать по дате</Button>
                     <select size="1" id="select2" onChange={() => {
+                        if (document.getElementById("select2").value === "Все") {
+                            this.getAllCompositions()
+                        }
                         this.updateCompositionsByFandom(document.getElementById("select2").value)
                         console.log(document.getElementById("select2").value)
                     }}>
