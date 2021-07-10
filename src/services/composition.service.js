@@ -16,6 +16,12 @@ class CompositionService {
             params: {name: name}
         })
     }
+
+    getCompositionsByFandom(name) {
+        return axios.get(API_URL + 'fandom', {
+            params: {name: name}
+        })
+    }
 }
 
 export default new CompositionService();
