@@ -53,12 +53,12 @@ export default class Home extends Component {
                         console.log(this.state.compositions)
                     }}>Сортировать по дате</Button>
                     <select size="1" id="select">
-                        <option onChange={() => {
+                        <option onClick={() => {
                             this.getAllCompositions()
                             console.log(this.state.content)
                         }}>Все</option>
                         {this.state.fandoms.map((fandom, index) => (
-                            <option key={index} value={fandom.name} onChange={() => {
+                            <option key={index} value={fandom.name} onClick={() => {
                                 this.updateCompositionsByFandom(fandom.name)
                                 console.log(this.state.compositions)
                             }}>{fandom.name}</option>
