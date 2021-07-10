@@ -25,24 +25,39 @@ export default class Home extends Component {
         })
     }
 
+    getAllCompositions = () => {
+        CompositionService.getAllCompositions().then(res => {
+            this.setState({content: res.data})
+        })
+    }
+
+    updateCompositionsByFandom = (name) => {
+        CompositionService.getCompositionsByFandom(name).then(r => {
+            this.setState({compositions: r.data})
+        })
+    }
+
+    getSortedCompositions = () => {
+        CompositionService.getSortedCompositions().then(r => {
+            this.setState({compositions: r.data})
+        })
+    }
+
     render() {
         const compositions = this.state.compositions;
         return (
             <div className="container">
                 <div className="list-inline">
                     <Button onClick={() => {
-                        CompositionService.getSortedCompositions().then(r => {
-                            this.setState({compositions: []})
-                            this.setState({compositions: r.data})
-                        });
+                        this.getSortedCompositions()
                     }}>Сортировать по дате</Button>
                     <select size="1" id="select">
+                        <option onChange={() => {
+                            this.getAllCompositions()
+                        }}>Все</option>
                         {this.state.fandoms.map((fandom, index) => (
-                            <option key={index} value={fandom.name} onClick={() => {
-                                CompositionService.getCompositionsByFandom(fandom.name).then(r => {
-                                    this.setState({compositions: []})
-                                    this.setState({compositions: r.data})
-                                })
+                            <option key={index} value={fandom.name} onChange={() => {
+                                this.updateCompositionsByFandom(fandom.name)
                             }}>{fandom.name}</option>
                         ))}
                     </select>
