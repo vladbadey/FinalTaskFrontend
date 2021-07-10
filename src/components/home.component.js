@@ -52,21 +52,21 @@ export default class Home extends Component {
                         this.getSortedCompositions()
                         console.log(this.state.compositions)
                     }}>Сортировать по дате</Button>
-                    <select size="1" id="select2">
+                    <select size="1" id="select2" onChange={() => {
+                        this.updateCompositionsByFandom(document.getElementById("select2").value)
+                        console.log(document.getElementById("select2").value)
+                    }}>
                         <option value="Все">Все</option>
                         {this.state.fandoms.map((fandom, index) => (
-                            <option key={index} value={fandom.name} onClick={() => {
-                                this.updateCompositionsByFandom(document.getElementById("select2").value)
-                                console.log(document.getElementById("select2").value)}
-                            }>{fandom.name}</option>
+                            <option key={index} value={fandom.name}>{fandom.name}</option>
                         ))}
                     </select>
                 </div>
-                {/*{compositions ? (*/}
-                {/*    <CardList content={compositions}/>*/}
-                {/*) : (*/}
-                {/*    <CardList content={this.state.content}/>*/}
-                {/*)}*/}
+                {compositions ? (
+                    <CardList content={compositions}/>
+                ) : (
+                    <CardList content={this.state.content}/>
+                )}
 
             </div>
         );
