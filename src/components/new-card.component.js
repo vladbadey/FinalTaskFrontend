@@ -5,6 +5,7 @@ import UserCompositionService from "../services/user-composition.service";
 import AuthService from "../services/auth.service";
 import {useDropzone} from "react-dropzone";
 import axios from "axios";
+import Textarea from "react-validation/src/components/textarea";
 
 function ImageDrop() {
     const [files, setFiles] = useState([])
@@ -95,7 +96,7 @@ export class NewCard extends Component {
                 <br/>
                 <br/>
                 <h4>Введите описание произведения</h4>
-                <input id="composition_description" type="text" style={{padding: 30}} size="70"/>
+                <Textarea id="composition_description" type="text" style={{padding: 30}} size="70"/>
                 <br/>
                 <br/>
                 <select size="1" id="select">

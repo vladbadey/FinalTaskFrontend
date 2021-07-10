@@ -1,6 +1,7 @@
 import React, {Component, useCallback, useState} from 'react';
 import {Button, FormCheck} from "react-bootstrap";
 import ChapterService from "../services/chapter.service";
+import Textarea from "react-validation/src/components/textarea";
 
 
 export class AddChapter extends Component {
@@ -31,7 +32,7 @@ export class AddChapter extends Component {
                 <br/>
                 <br/>
                 <h4>Введите текст главы</h4>
-                <input id="chapter_content" type="text" style={{padding: 100}} size="100"/>
+                <Textarea id="chapter_content" type="text" style={{padding: 100}} size="100"/>
                 <Button onClick={() => {
                     let res = {
                         name: document.getElementById("chapter_name").value,
